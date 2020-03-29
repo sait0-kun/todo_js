@@ -1,0 +1,21 @@
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+}
+
+.input__date {
+  width: 10%;
+}
+
+.input__text {
+  width: 20%;
+}
+
+ul {
+  list-style: none;
+}
