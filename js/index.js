@@ -1,15 +1,26 @@
 'use strict'
 
 {
-  document.getElementById('add').addEventListener('click', () => {
-    const li = document.createElement('li');
-    const date = document.getElementById('date');
-    const text = document.getElementById('text');
-    li.textContent = date.value + text.value;
-    
-    document.querySelector('ul').appendChild(li);
-    
-    text.value = '';
-    text.focus();
+  document.getElementById('btn').addEventListener('click', () => {
+    const Table = document.getElementById('targetTable');
+    const NewRow = Table.insertRow();
+    const Td = document.createElement('td');
+    let newCell = NewRow.insertCell();
+
+    const Date = document.getElementById('Date')
+    const Text = document.getElementById('Text')
+
+    // 日付を追加
+    newCell.textContent = Date.value;
+    newCell.appendChild(Td);
+
+    // textを追加
+    newCell = NewRow.insertCell();
+    newCell.textContent = Text.value;
+    newCell.appendChild(Td);
+
+    // textクリア&focus
+    Text.value = '';
+    Text.focus();
   });
 }
