@@ -2,34 +2,35 @@
 
 {
   document.getElementById('btn').addEventListener('click', () => {
-    const Table = document.getElementById('targetTable');
-    const NewRow = Table.insertRow();
-    const Td = document.createElement('td');
+    const table = document.getElementById('targetTable');
+    const new_row = table.insertRow();
+    const td = document.createElement('td');
 
-    const Date = document.getElementById('Date'); //日付取得
-    const Text = document.getElementById('Text'); //内容取得
-    const CompleteButton = '<input type="button" value="完了" onclick="completeRow(this)" />'; //完了ボタン生成
-    const DeleteButton = '<input type="button" value="削除" onclick="deleteRow(this)" />'; //削除ボタン生成
+    const date = document.getElementById('Date'); //日付取得
+    const text = document.getElementById('Text'); //内容取得
+    const complete_button = '<input type="button" value="完了" class="btn" onclick="completeRow(this)" />'; //完了ボタン生成
+    const delete_button = '<input type="button" value="削除" class="btn" onclick="deleteRow(this)" />'; //削除ボタン生成
 
-    
+
     // 日付追加
-    let newCell = NewRow.insertCell();
-    newCell.textContent = Date.value;
+    let newCell = new_row.insertCell();
+    newCell.textContent = date.value;
 
     // text追加
-    newCell = NewRow.insertCell();
-    newCell.textContent = Text.value;
+    newCell = new_row.insertCell();
+    newCell.textContent = text.value;
 
     // 完了ボタン追加
-    newCell = NewRow.insertCell();
-    newCell.innerHTML = CompleteButton;
+    newCell = new_row.insertCell();
+    newCell.innerHTML = complete_button;
 
     // 削除ボタン追加
-    newCell = NewRow.insertCell();
-    newCell.innerHTML = DeleteButton;
+    newCell = new_row.insertCell();
+    newCell.innerHTML = delete_button;
 
     // textクリア&focus
-    Text.value = '';
-    Text.focus();
+    text.value = '';
+    text.focus();
   });
 }
+

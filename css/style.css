@@ -21,6 +21,10 @@ h1 {
   width: 20%;
 }
 
+.input #btn:hover {
+  cursor: pointer;
+}
+
 table {
   width: 70%;
   margin: 40px auto;
@@ -48,4 +52,18 @@ table tr td:nth-of-type(4) {
 
 table tr td button {
   width: 100%;
+}
+
+table .btn {
+  width: 100%;
+  transition: all ease .6s;
+}
+
+table .btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }

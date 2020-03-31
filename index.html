@@ -11,13 +11,22 @@
   <div class="input">
     <input type="date" class="input__date" id="Date">
     <input type="text" class="input__text" id="Text">
-    <button id="btn">追加</button>
+    <input type="button" value="追加" id="btn">
   </div>
   <table id="targetTable">
 
   </table>
   
-
   <script src="js/index.js"></script>
+  <script>
+    function deleteRow(obj) {
+      tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
+      tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
+    }
+    function completeRow(obj) {
+      tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
+      tr.classList.toggle("line-through"); // 押下し行にクラス追加
+    }
+  </script>
 </body>
 </html>
