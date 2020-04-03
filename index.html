@@ -20,7 +20,15 @@
   <script>
     function deleteRow(obj) {
       tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
+      let i = tr.sectionRowIndex;
+      let len = localStorage.length;
       tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
+      localStorage.removeItem(i);
+      for (i = ++i; i <= len; i++) {
+        let cnt = i - 1;
+        localStorage.setItem(cnt, localStorage.getItem(i));
+      }
+      localStorage.removeItem(i - 2);
     }
     function completeRow(obj) {
       tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
