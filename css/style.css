@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP");
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   width: 100%;
-  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background: -moz-linear-gradient(top, #FFC778, #FFF);
+  background: -webkit-linear-gradient(top, #FFC778, #FFF);
+  background: linear-gradient(to bottom, #333, #192342);
 }
 
 h1 {
-  color: blue;
+  color: #0980f0;
   text-align: center;
+  font-family: 'Noto Serif JP', sans-serif;
 }
 
 .input {
@@ -21,43 +32,47 @@ h1 {
   width: 20%;
 }
 
+.input #btn {
+  color: #fff;
+}
+
 .input #btn:hover {
   cursor: pointer;
+  color: #0980f0;
 }
 
 table {
-  width: 70%;
+  width: 50%;
   margin: 40px auto;
 }
 
 table tr {
-  background-color: blue;
+  color: #333;
 }
 
 table tr td:nth-of-type(1) {
-  width: 60%;
+  width: 1%;
+  color: #fff;
 }
 
 table tr td:nth-of-type(2) {
-  width: 8%;
+  width: 80%;
+  background-color: #f0f0f0;
+  padding-left: 20px;
 }
 
 table tr td:nth-of-type(3) {
-  width: 8%;
+  width: 1%;
+  color: #fff;
 }
 
-table tr td button {
-  width: 100%;
-}
-
-table .btn {
-  width: 100%;
+table i {
   transition: all ease .6s;
 }
 
-table .btn:hover {
+table i:hover {
   cursor: pointer;
-  background-color: green;
+  color: #0980f0;
 }
 
 .line-through {

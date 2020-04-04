@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <link rel="stylesheet" href="css/style.css">
   <title>MyTodoアプリ</title>
 </head>
 <body>
-  <h1>やることリスト</h1>
+  <h1>My Tasc List</h1>
   <div class="input">
     <input type="text" class="input__text" id="Text">
-    <input type="button" value="追加" id="btn">
+    <i class="fas fa-plus" id="btn"></i>
   </div>
   <table id="targetTable">
 
@@ -20,6 +21,7 @@
   <script>
     function deleteRow(obj) {
       tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
+      console.log(obj);
       let i = tr.sectionRowIndex;
       let len = localStorage.length;
       tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
@@ -29,11 +31,11 @@
         localStorage.setItem(cnt, localStorage.getItem(i));
       }
       localStorage.removeItem(i - 2);
-    }
-    function completeRow(obj) {
-      tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
-      tr.classList.toggle("line-through"); // 押下し行にクラス追加
-    }
+  }
+  function completeRow(obj) {
+    tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
+    tr.classList.toggle("line-through"); // 押下し行にクラス追加
+  } 
   </script>
 </body>
 </html>
