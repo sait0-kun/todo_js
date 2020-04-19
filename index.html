@@ -23,7 +23,7 @@
       tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
       console.log(obj);
       let i = tr.sectionRowIndex;
-      let len = localStorage.length;
+      let len = localStorage.data.length;
       tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
       localStorage.removeItem(i);
       for (i = ++i; i <= len; i++) {
