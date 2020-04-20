@@ -21,16 +21,19 @@
   <script>
     function deleteRow(obj) {
       tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
-      console.log(obj);
       let i = tr.sectionRowIndex;
-      let len = localStorage.length;
+      const storage = localStorage;
+      const key = JSON.parse(storage.getItem('todo'));
+      let len = key.length;
       tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
-      localStorage.removeItem(i);
+      delete key[i]; // １回データを取り出して、配列に変換したあと特定の要素を削除
+      key.splice(i, 1);
+
       for (i = ++i; i <= len; i++) {
-        let cnt = i - 1;
-        localStorage.setItem(cnt, localStorage.getItem(i));
+        storage.setItem('todo', key[i]);
       }
-      localStorage.removeItem(i - 2);
+      delete key[i];
+      storage.setItem('todo', JSON.stringify(key));
   }
   function completeRow(obj) {
     tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
