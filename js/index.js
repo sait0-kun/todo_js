@@ -1,4 +1,4 @@
-'use strict'
+
 
 {
   const myStorage = function(todo) {
@@ -69,6 +69,23 @@
     text.focus();
     i +=1;
   });
+
+  function deleteRow(obj) {
+    tr = obj.parentNode.parentNode; // 削除ボタンを押下された行を取得
+    let i = tr.sectionRowIndex;
+    const storage = localStorage;
+    const key = JSON.parse(storage.getItem('todo'));
+    let len = key.length; // ストレージ、キー、todoの要素数
+    tr.parentNode.deleteRow(tr.sectionRowIndex); // trのインデックスを取得して行を削除する
+    
+    delete key[i]; // １回データを取り出して、配列に変換したあと特定の要素を削除
+    key.splice(i, 1); // 配列からも特定の要素を削除
+    storage.setItem('todo', JSON.stringify(key)); // セットし直す
+  }
+  function completeRow(obj) {
+    tr = obj.parentNode.parentNode; // 完了ボタンを押下された行を取得
+    tr.classList.toggle("line-through"); // 押下し行にクラス追加
+  } 
 }
 
 
